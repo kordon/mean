@@ -1,0 +1,26 @@
+{
+  "name": "mean",
+  "version": "0.1.0",
+  "description": "Mean interval",
+  "keywords": ["mean"],
+  "homepage": "https://github.com/kordon/mean",
+  "author": "Sérgio Ramos <http://sergioramos.me> (mail@sergioramos.me)",
+  "bugs": {
+    "url": "http://github.com/kordon/mean/issues",
+    "email": "mail@sergioramos.me"
+  },
+  "license": "MIT",
+  "main": "src/mean.js",
+  "directories": {
+    "lib": "src",
+    "doc": "doc",
+    "man": "man"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kordon/mean.git"
+  },
+  "scripts": {
+    "test": "make test test-coveralls"
+  }
+}
