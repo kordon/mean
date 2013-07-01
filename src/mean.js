@@ -1,7 +1,10 @@
 /**
- * Get the mean interval
+ * Get the mean interval. Example:
  *
- * @returns {number} mean
+ *     mean([111, 222, 333, 444, 555]) // => 333
+ *
+ * @param {array} intervals
+ * @returns {number}
  */
 module.exports = function (intervals) {
   return intervals.reduce(function (prev, curr) {
