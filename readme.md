@@ -12,6 +12,13 @@ Get the mean from an array of numbers
 ```bash
 $ npm install [--save] mean
 ```
+```bash
+$ component install kordon/mean
+```
+```bash
+$ bower install mean
+```
+
 
 ## example
 
