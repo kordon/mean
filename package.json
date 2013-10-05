@@ -26,8 +26,8 @@
   "devDependencies": {
     "mocha-lcov-reporter": "0.0.x",
     "jscoverage": "0.3.x",
-    "component": "0.16.x",
-    "coveralls": "2.0.x",
-    "mocha": "1.12.x"
+    "component": "0.17.x",
+    "coveralls": "2.3.x",
+    "mocha": "1.13.x"
   }
 }
