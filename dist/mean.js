@@ -27,10 +27,14 @@ function require(path, parent, orig) {
   // perform real require()
   // by invoking the module's
   // registered function
-  if (!module.exports) {
-    module.exports = {};
-    module.client = module.component = true;
-    module.call(this, module.exports, require.relative(resolved), module);
+  if (!module._resolving && !module.exports) {
+    var mod = {};
+    mod.exports = {};
+    mod.client = mod.component = true;
+    module._resolving = true;
+    module.call(this, mod.exports, require.relative(resolved), mod);
+    delete module._resolving;
+    module.exports = mod.exports;
   }
 
   return module.exports;
@@ -205,18 +209,20 @@ require.register("mean/src/mean.js", function(exports, require, module){
  * @param {array} intervals
  * @returns {number}
  */
-module.exports = function (intervals) {
-  return intervals.reduce(function (prev, curr) {
+module.exports = function(intervals) {
+  if (!intervals.length) {
+    return 0
+  }
+
+  return (intervals.reduce(function(prev, curr) {
     return prev + curr
-  }) / intervals.length
+  }) / intervals.length)
 }
 });
-require.alias("mean/src/mean.js", "mean/index.js");
-
-if (typeof exports == "object") {
+require.alias("mean/src/mean.js", "mean/index.js");if (typeof exports == "object") {
   module.exports = require("mean");
 } else if (typeof define == "function" && define.amd) {
-  define(function(){ return require("mean"); });
+  define([], function(){ return require("mean"); });
 } else {
   this["mean"] = require("mean");
 }})();

@@ -1,17 +1,20 @@
 {
   "name": "mean",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "Mean interval",
   "keywords": [
     "mean"
   ],
   "homepage": "https://github.com/ramitos/mean",
-  "author": "Sérgio Ramos <http://sergioramos.me> (mail@sergioramos.me)",
   "bugs": {
     "url": "http://github.com/ramitos/mean/issues",
     "email": "mail@sergioramos.me"
   },
-  "license": "MIT",
+  "licenses": {
+    "url": "https://raw.github.com/ramitos/mean/master/license",
+    "type": "MIT"
+  },
+  "author": "Sérgio Ramos <http://sergioramos.me> (mail@sergioramos.me)",
   "main": "src/mean.js",
   "directories": {
     "lib": "src"
@@ -24,10 +27,15 @@
     "test": "make test test-coveralls"
   },
   "devDependencies": {
-    "mocha-lcov-reporter": "0.0.x",
-    "jscoverage": "0.3.x",
-    "component": "0.17.x",
-    "coveralls": "2.3.x",
-    "mocha": "1.13.x"
+    "component": "^0.19.9",
+    "jscoverage": "^0.5.6",
+    "mocha": "^1.21.4",
+    "mocha-lcov-reporter": "0.0.1"
+  },
+  "engines": {
+    "node": ">=0.8"
+  },
+  "dependencies": {
+    "coveralls": "^2.11.1"
   }
 }
